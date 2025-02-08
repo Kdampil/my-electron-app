@@ -10,25 +10,22 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Disable Auto-Publishing
-        run: echo "GH_TOKEN=" >> $GITHUB_ENV
-
-      - name: Build Windows Executable
+      - name: Build executable
         run: npm run pack
 
-      - name: Upload Windows Executable
-        uses: actions/upload-artifact@v4
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
         with:
-          name: countdown-timer-windows
+          name: countdown-timer
           path: dist/*.exe
