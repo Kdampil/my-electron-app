@@ -21,6 +21,9 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Disable Auto-Publishing
+        run: echo '{ "publish": "never" }' > publish.json
+
       - name: Build Windows Executable
         run: npm run pack
 
