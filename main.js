@@ -7,6 +7,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 400,
     height: 300,
+    frame: false, // Make the window borderless
     webPreferences: {
       preload: path.join(__dirname, 'renderer.js'),
       nodeIntegration: true,
