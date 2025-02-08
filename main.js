@@ -3,22 +3,29 @@ const path = require('path');
 
 let mainWindow;
 
+function createWindow() {
+  mainWindow = new BrowserWindow({
+    width: 400,
+    height: 300,
+    webPreferences: {
+      preload: path.join(__dirname, 'renderer.js'),
+      nodeIntegration: true,
+      contextIsolation: false,
+    },
+  });
+
+  mainWindow.loadFile('index.html');
+  mainWindow.on('closed', () => (mainWindow = null));
+}
+
 app.whenReady().then(() => {
-    mainWindow = new BrowserWindow({
-        width: 400,
-        height: 300,
-        webPreferences: {
-            nodeIntegration: true
-        }
-    });
+  createWindow();
 
-    mainWindow.loadFile('index.html');
-
-    mainWindow.on('closed', () => {
-        mainWindow = null;
-    });
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  });
 });
 
 app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') app.quit();
+  if (process.platform !== 'darwin') app.quit();
 });

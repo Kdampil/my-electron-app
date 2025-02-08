@@ -1,31 +1,21 @@
 {
   "name": "countdown-timer",
   "version": "1.0.0",
-  "description": "A simple Electron countdown timer.",
+  "description": "A simple countdown timer app built with Electron",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "pack": "electron-builder"
+    "pack": "electron-builder --win --publish never"
   },
-  "dependencies": {
-    "electron": "^29.0.0"
-  },
-"dependencies": {},
-"devDependencies": {
-  "electron": "^29.0.0",
-  "electron-builder": "^24.5.1"
-},
   "build": {
-    "appId": "com.example.countdowntimer",
-    "productName": "Countdown Timer",
     "win": {
       "target": "nsis"
-    },
-    "mac": {
-      "target": "dmg"
-    },
-    "linux": {
-      "target": "AppImage"
     }
+  },
+  "dependencies": {
+    "electron": "^27.0.0"
+  },
+  "devDependencies": {
+    "electron-builder": "^24.0.0"
   }
 }
