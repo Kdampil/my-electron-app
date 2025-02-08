@@ -21,6 +21,9 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Force Disable CI Publishing
+        run: echo "GH_TOKEN=invalid" >> $GITHUB_ENV
+
       - name: Build Windows Executable
         run: npm run pack
 
