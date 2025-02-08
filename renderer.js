@@ -2,7 +2,7 @@ let countdownInterval;
 let remainingTime = 0;
 
 const timerDisplay = document.getElementById('timer');
-const timeInput = document.getElementById('time-input');
+const timeDropdown = document.getElementById('time-dropdown');
 const startButton = document.getElementById('start-btn');
 const resetButton = document.getElementById('reset-btn');
 const alertSound = document.getElementById('alert-sound');
@@ -34,17 +34,14 @@ function resetCountdown() {
 }
 
 startButton.addEventListener('click', () => {
-  const input = timeInput.value.trim();
-  const timeParts = input.split(':').map(Number);
-
-  if (timeParts.length === 2 && !isNaN(timeParts[0]) && !isNaN(timeParts[1])) {
-    const [minutes, seconds] = timeParts;
-    remainingTime = minutes * 60 + seconds;
+  const selectedTime = parseInt(timeDropdown.value, 10);
+  if (!isNaN(selectedTime)) {
+    remainingTime = selectedTime;
     updateTimerDisplay(remainingTime);
     resetCountdown(); // Reset before starting
     startCountdown();
   } else {
-    alert('Please enter a valid time in MM:SS format.');
+    alert('Please select a valid time.');
   }
 });
 
