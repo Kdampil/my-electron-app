@@ -10,7 +10,12 @@
   <div class="container">
     <h1>Countdown Timer</h1>
     <div class="timer-display" id="timer">00:00</div>
-    <input type="text" id="time-input" placeholder="Enter time in MM:SS format" />
+    <select id="time-dropdown">
+      <option value="300">5 Minutes</option>
+      <option value="600">10 Minutes</option>
+      <option value="900">15 Minutes</option>
+      <option value="1800">30 Minutes</option>
+    </select>
     <div class="buttons">
       <button id="start-btn">Start</button>
       <button id="reset-btn">Reset</button>
