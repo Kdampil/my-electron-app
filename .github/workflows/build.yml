@@ -1,4 +1,4 @@
-name: Build Countdown Timer
+name: Build Windows Executable
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest  # Ensures it's built on Windows
 
     steps:
       - name: Checkout Repository
@@ -21,11 +21,11 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build App
+      - name: Build Windows Executable
         run: npm run pack
 
-      - name: Upload Executables
+      - name: Upload Windows Executable
         uses: actions/upload-artifact@v4
         with:
-          name: countdown-timer-build
+          name: countdown-timer-windows
           path: dist/
