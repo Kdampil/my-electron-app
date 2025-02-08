@@ -32,3 +32,11 @@ jobs:
         with:
           name: countdown-timer-windows
           path: dist/
+          {
+  "appId": "com.example.countdowntimer",
+  "productName": "Countdown Timer",
+  "win": {
+    "target": "nsis"
+  },
+  "publish": "never"
+}
