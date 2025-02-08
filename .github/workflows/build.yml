@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest  # Ensures it's built on Windows
+    runs-on: windows-latest  # Build on Windows
 
     steps:
       - name: Checkout Repository
@@ -20,9 +20,6 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-
-      - name: Disable Auto-Publishing
-        run: echo '{ "publish": "never" }' > publish.json
 
       - name: Build Windows Executable
         run: npm run pack
