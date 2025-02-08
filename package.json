@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A simple countdown timer app built with Electron",
   "main": "main.js",
+  "author": "Your Name <your.email@example.com>",
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --win --publish never"
@@ -12,10 +13,9 @@
       "target": "nsis"
     }
   },
-  "dependencies": {
-    "electron": "^27.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "electron": "^27.0.0",
     "electron-builder": "^24.0.0"
   }
 }
