@@ -10,9 +10,11 @@
   "dependencies": {
     "electron": "^29.0.0"
   },
-  "devDependencies": {
-    "electron-builder": "^24.5.1"
-  },
+"dependencies": {},
+"devDependencies": {
+  "electron": "^29.0.0",
+  "electron-builder": "^24.5.1"
+},
   "build": {
     "appId": "com.example.countdowntimer",
     "productName": "Countdown Timer",
