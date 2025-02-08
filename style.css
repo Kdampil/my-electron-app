@@ -15,6 +15,8 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%; /* Scale with window size */
+  max-width: 400px;
 }
 
 .timer-display {
@@ -27,7 +29,7 @@ select {
   padding: 10px;
   font-size: 16px;
   margin-bottom: 20px;
-  width: 200px;
+  width: 100%;
 }
 
 .buttons button {
@@ -35,6 +37,7 @@ select {
   font-size: 16px;
   margin: 5px;
   cursor: pointer;
+  width: 48%; /* Two buttons side by side */
 }
 
 #start-btn {
