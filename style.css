@@ -1,53 +1,55 @@
 body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   margin: 0;
-  background-color: #f4f4f9;
-  overflow: hidden; /* Prevent scrolling */
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#drag-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-color: #333;
+  cursor: move;
+  -webkit-app-region: drag;
 }
 
 .container {
   text-align: center;
-  background: white;
   padding: 20px;
+  background: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 90%; /* Scale with window size */
-  max-width: 400px;
 }
 
 .timer-display {
   font-size: 48px;
+  font-weight: bold;
   margin: 20px 0;
-  color: #333;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
 
 select {
   padding: 10px;
   font-size: 16px;
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-.buttons button {
-  padding: 10px 20px;
-  font-size: 16px;
-  margin: 5px;
-  cursor: pointer;
-  width: 48%; /* Two buttons side by side */
-}
-
-#start-btn {
-  background-color: #28a745;
-  color: white;
-  border: none;
-}
-
-#reset-btn {
-  background-color: #dc3545;
-  color: white;
-  border: none;
 }
